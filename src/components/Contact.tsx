@@ -1,10 +1,28 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Phone, Mail, MapPin, MessageCircle, Download } from "lucide-react";
+import { Phone, Mail, MapPin, MessageCircle, Download, Send } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { useForm } from "react-hook-form";
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+
+interface ContactFormData {
+  name: string;
+  email: string;
+  description: string;
+}
 
 const Contact = () => {
   const { toast } = useToast();
+  
+  const form = useForm<ContactFormData>({
+    defaultValues: {
+      name: "",
+      email: "",
+      description: "",
+    },
+  });
 
   const handleCall = () => {
     window.open("tel:+917600022951", "_self");
@@ -36,6 +54,19 @@ const Contact = () => {
       description: "Your CV download will start shortly",
     });
     // Here you would typically handle the actual file download
+  };
+
+  const onSubmit = (data: ContactFormData) => {
+    toast({
+      title: "Message sent!",
+      description: "Thank you for your message. I'll get back to you soon.",
+    });
+    
+    // Here you would typically send the form data to your backend
+    console.log("Form submitted:", data);
+    
+    // Reset the form
+    form.reset();
   };
 
   return (
@@ -158,6 +189,88 @@ const Contact = () => {
             </Card>
           </div>
         </div>
+
+        {/* Contact Form */}
+        <Card className="portfolio-hover-glow transition-all duration-300">
+          <CardContent className="p-8">
+            <div className="text-center mb-8">
+              <h3 className="text-2xl font-bold mb-4">
+                Send Me a <span className="text-accent">Message</span>
+              </h3>
+              <p className="text-portfolio-text-subtle">
+                Have a project in mind? I'd love to hear about it. Fill out the form below and I'll get back to you as soon as possible.
+              </p>
+            </div>
+            
+            <Form {...form}>
+              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <FormField
+                    control={form.control}
+                    name="name"
+                    rules={{ required: "Name is required" }}
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Full Name</FormLabel>
+                        <FormControl>
+                          <Input placeholder="Enter your full name" {...field} />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  
+                  <FormField
+                    control={form.control}
+                    name="email"
+                    rules={{ 
+                      required: "Email is required",
+                      pattern: {
+                        value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                        message: "Invalid email address"
+                      }
+                    }}
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Email Address</FormLabel>
+                        <FormControl>
+                          <Input type="email" placeholder="Enter your email" {...field} />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                </div>
+                
+                <FormField
+                  control={form.control}
+                  name="description"
+                  rules={{ required: "Message is required" }}
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Message</FormLabel>
+                      <FormControl>
+                        <Textarea 
+                          placeholder="Tell me about your project, timeline, and any specific requirements..."
+                          className="min-h-[120px]"
+                          {...field}
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                
+                <div className="flex justify-center">
+                  <Button type="submit" variant="hero" size="lg" className="px-12">
+                    <Send className="h-5 w-5" />
+                    Send Message
+                  </Button>
+                </div>
+              </form>
+            </Form>
+          </CardContent>
+        </Card>
       </div>
     </section>
   );
