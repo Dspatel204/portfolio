@@ -41,11 +41,11 @@ const Projects = () => {
       }
     },
     {
-      title: "AliquiZ Quiz Platform",
-      description: "Interactive quiz platform with multiple question types, scoring system, and progress tracking for educational purposes.",
+      title: "kanvica jewellary",
+      description: "Kanvika offers an elegant and curated collection of handcrafted jewelry—ranging from statement jhumkas and ornate neckpieces to oxidised silver bangles. The site mixes rich visuals with clear product specs (materials, dimensions, weight) and styling guidance, emphasizing quality craftsmanship and easy care. It’s tailored for shoppers seeking traditional, festive, or everyday ethnic pieces with a modern touch.",
       tags: ["React", "Interactive UI", "Scoring System", "Education"],
       links: {
-        demo: "https://master--aliquiz-play.netlify.app/",
+        demo: "https://kanvika.netlify.app/",
         github: "#"
       }
     },
