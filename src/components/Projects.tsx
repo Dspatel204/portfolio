@@ -97,6 +97,23 @@ const Projects = () => {
         github: null,
       },
     },
+    {
+      title: "AD Scroll To Top",
+      description:
+        "A lightweight Shopify app that enhances user navigation by adding a fully customizable 'scroll to top' button—no coding required. Key features include WYSIWYG button designer, adjustable size/position/style/transparency, real-time preview, and theme-wide compatibility. Ideal for improving user experience and reducing bounce on long pages.",
+      tags: [
+        "Customizable",
+        "No-Code",
+        "Real-Time Preview",
+        "User Experience",
+        "Bounce Reduction",
+        "Lightweight",
+      ],
+      links: {
+        demo: "https://apps.shopify.com/ad-scroll-to-top",
+        github: null,
+      },
+    },
   ];
 
   return (
