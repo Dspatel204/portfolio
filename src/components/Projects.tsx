@@ -23,11 +23,11 @@ const Projects = () => {
       }
     },
     {
-      title: "Rates by Zipcode iWeb",
-      description: "Advanced shipping rate management system with multi-currency support and detailed analytics. Handles unlimited shipping zones and postal codes.",
+      title: "Shipping Rates by Zipcode iWeb",
+      description: "Advanced shipping rate management system with multi-currency support and detailed analytics. Handles unlimited shipping zones and postal codes.Set shipping rates by Zipcode/postal code, cart total price & weight based in your store.",
       tags: ["React", "E-commerce", "Multi-currency", "Analytics"],
       links: {
-        demo: "https://main--dspatelpapp.netlify.app/",
+        demo: "https://apps.shopify.com/rates-by-zipcode-iweb",
         github: "#"
       }
     },
