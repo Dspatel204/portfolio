@@ -25,7 +25,7 @@ const Hero = () => {
               <img 
                 src={profileImage} 
                 alt="Dishant Patel" 
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain"
               />
             </div>
             <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-accent/20 to-transparent"></div>
