@@ -57,13 +57,38 @@ const Contact = () => {
   };
 
   const onSubmit = (data: ContactFormData) => {
+    // Create email content
+    const emailSubject = `Portfolio Contact: Message from ${data.name}`;
+    const emailBody = `
+Name: ${data.name}
+Email: ${data.email}
+
+Message:
+${data.description}
+    `.trim();
+    
+    // Create SMS content
+    const smsText = `Portfolio Contact from ${data.name} (${data.email}): ${data.description.substring(0, 100)}${data.description.length > 100 ? '...' : ''}`;
+    
+    // Open email client
+    const mailtoLink = `mailto:dishant.sureshbhai@gmail.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+    window.open(mailtoLink, '_self');
+    
+    // Also provide SMS option
+    const smsLink = `sms:+917600022951?body=${encodeURIComponent(smsText)}`;
+    
     toast({
       title: "Message sent!",
-      description: "Thank you for your message. I'll get back to you soon.",
+      description: "Email client opened. You can also send via SMS if needed.",
+      action: (
+        <button 
+          onClick={() => window.open(smsLink, '_self')}
+          className="text-sm underline text-accent"
+        >
+          Send SMS instead
+        </button>
+      ),
     });
-    
-    // Here you would typically send the form data to your backend
-    console.log("Form submitted:", data);
     
     // Reset the form
     form.reset();
@@ -208,7 +233,17 @@ const Contact = () => {
                   <FormField
                     control={form.control}
                     name="name"
-                    rules={{ required: "Name is required" }}
+                    rules={{ 
+                      required: "Name is required",
+                      minLength: {
+                        value: 2,
+                        message: "Name must be at least 2 characters"
+                      },
+                      pattern: {
+                        value: /^[a-zA-Z\s]+$/,
+                        message: "Name can only contain letters and spaces"
+                      }
+                    }}
                     render={({ field }) => (
                       <FormItem>
                         <FormLabel>Full Name</FormLabel>
@@ -245,7 +280,17 @@ const Contact = () => {
                 <FormField
                   control={form.control}
                   name="description"
-                  rules={{ required: "Message is required" }}
+                  rules={{ 
+                    required: "Message is required",
+                    minLength: {
+                      value: 10,
+                      message: "Message must be at least 10 characters"
+                    },
+                    maxLength: {
+                      value: 500,
+                      message: "Message must not exceed 500 characters"
+                    }
+                  }}
                   render={({ field }) => (
                     <FormItem>
                       <FormLabel>Message</FormLabel>
