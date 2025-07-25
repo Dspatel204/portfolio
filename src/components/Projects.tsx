@@ -5,9 +5,9 @@ import { ExternalLink, Github } from "lucide-react";
 const Projects = () => {
   const projects = [
     {
-      title: "Webly - Landing Page Builder",
+      title: "Weblly ‑ Landing Page Builder",
       description:
-        "Drag-and-drop landing page builder with responsive design capabilities. No coding skills required—design pixel-perfect pages for both mobile and desktop.",
+        "Drag-and-drop landing page builder with responsive design capabilities. No coding skills required—design pixel-perfect pages for both mobile and desktop.Effortlessly create responsive and beautiful landing pages to enhance your online presence and sales",
       tags: [
         "React",
         "Drag & Drop",
@@ -15,7 +15,7 @@ const Projects = () => {
         "Shopify Integration",
       ],
       links: {
-        demo: "https://apps.shopify.com/webly",
+        demo: "https://apps.shopify.com/weblly",
         github: "#",
       },
     },
