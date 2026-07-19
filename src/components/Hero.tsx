@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Phone, Download, Mail, MapPin } from "lucide-react";
-import profileImage from "@/assets/profile-hero.jpg";
+import profileImage from "@/assets/profile-hero.jpeg";
 
 const Hero = () => {
   const handleCall = () => {
