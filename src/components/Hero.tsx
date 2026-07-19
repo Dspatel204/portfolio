@@ -22,9 +22,9 @@ const Hero = () => {
         <div className="flex justify-center lg:justify-end">
           <div className="relative">
             <div className="w-80 h-80 rounded-full overflow-hidden portfolio-glow">
-              <img 
-                src={profileImage} 
-                alt="Dishant Patel" 
+              <img
+                src={profileImage}
+                alt="Dishant Patel"
                 className="w-full h-full object-contain"
               />
             </div>
@@ -44,8 +44,10 @@ const Hero = () => {
           </div>
 
           <p className="text-lg text-portfolio-text-subtle max-w-lg">
-            Experienced React JS Developer with a strong background in creating dynamic web applications. 
-            I excel at crafting responsive designs tailored for various platforms, delivering exceptional user experiences.
+            Experienced React JS Developer with a strong background in creating
+            dynamic web applications. I excel at crafting responsive designs
+            tailored for various platforms, delivering exceptional user
+            experiences.
           </p>
 
           {/* Contact Info */}
@@ -70,10 +72,11 @@ const Hero = () => {
               <Phone className="h-5 w-5" />
               Hire Me
             </Button>
-            <Button variant="outline" size="lg" onClick={handleDownloadCV}>
-              <Download className="h-5 w-5" />
-              Download CV
-            </Button>
+            <a href="/Dishant_Patel_CV.pdf" download>
+              <Button variant="outline" size="lg">
+                Download CV
+              </Button>
+            </a>
           </div>
         </div>
       </div>
