@@ -5,6 +5,36 @@ import { ExternalLink, Github } from "lucide-react";
 const Projects = () => {
   const projects = [
     {
+      title: "LuvR Dating App",
+      description:
+        "Modern dating application with real-time messaging, user matching algorithms, and responsive design for optimal user experience.",
+      tags: ["React", "Real-time", "Matching Algorithm", "Responsive"],
+      links: {
+        demo: "https://master--luvr-dating.netlify.app/",
+        github: "#",
+      },
+    },
+    {
+      title: "Empower Your Business",
+      description:
+        "CoreTech Innovations delivers cutting-edge technology services tailored for today's fast-paced world. Our platform offers seamless real-time communications, AI-driven analytics, and resilient cloud infrastructure—all wrapped in a responsive, user-centric design. Whether you're scaling operations or refining your digital presence, CoreTech equips you with intelligent, data-powered tools for growth, efficiency, and innovation.",
+      tags: ["React", "Real-time", "Matching Algorithm", "Responsive"],
+      links: {
+        demo: "https://dspatelapp.netlify.app/",
+        github: "https://github.com/Dspatel204/coretechweb",
+      },
+    },
+    {
+      title: "kanvica jewellary",
+      description:
+        "Kanvika offers an elegant and curated collection of handcrafted jewelry—ranging from statement jhumkas and ornate neckpieces to oxidised silver bangles. The site mixes rich visuals with clear product specs (materials, dimensions, weight) and styling guidance, emphasizing quality craftsmanship and easy care. It’s tailored for shoppers seeking traditional, festive, or everyday ethnic pieces with a modern touch.",
+      tags: ["React", "Interactive UI", "Scoring System", "Education"],
+      links: {
+        demo: "https://kanvika.netlify.app/",
+        github: "https://github.com/Dspatel204/website",
+      },
+    },
+    /*  {
       title: "Weblly ‑ Landing Page Builder",
       description:
         "Drag-and-drop landing page builder with responsive design capabilities. No coding skills required—design pixel-perfect pages for both mobile and desktop.Effortlessly create responsive and beautiful landing pages to enhance your online presence and sales",
@@ -39,37 +69,7 @@ const Projects = () => {
         github: "#",
       },
     },
-    {
-      title: "LuvR Dating App",
-      description:
-        "Modern dating application with real-time messaging, user matching algorithms, and responsive design for optimal user experience.",
-      tags: ["React", "Real-time", "Matching Algorithm", "Responsive"],
-      links: {
-        demo: "https://master--luvr-dating.netlify.app/",
-        github: "#",
-      },
-    },
-    {
-      title: "Empower Your Business",
-      description:
-        "CoreTech Innovations delivers cutting-edge technology services tailored for today's fast-paced world. Our platform offers seamless real-time communications, AI-driven analytics, and resilient cloud infrastructure—all wrapped in a responsive, user-centric design. Whether you're scaling operations or refining your digital presence, CoreTech equips you with intelligent, data-powered tools for growth, efficiency, and innovation.",
-      tags: ["React", "Real-time", "Matching Algorithm", "Responsive"],
-      links: {
-        demo: "https://dspatelapp.netlify.app/",
-        github: "https://github.com/Dspatel204/coretechweb",
-      },
-    },
-    {
-      title: "kanvica jewellary",
-      description:
-        "Kanvika offers an elegant and curated collection of handcrafted jewelry—ranging from statement jhumkas and ornate neckpieces to oxidised silver bangles. The site mixes rich visuals with clear product specs (materials, dimensions, weight) and styling guidance, emphasizing quality craftsmanship and easy care. It’s tailored for shoppers seeking traditional, festive, or everyday ethnic pieces with a modern touch.",
-      tags: ["React", "Interactive UI", "Scoring System", "Education"],
-      links: {
-        demo: "https://kanvika.netlify.app/",
-        github: "https://github.com/Dspatel204/website",
-      },
-    },
-    {
+ {
       title: "Shipping Rates Compare",
       description:
         "A powerful Shopify app for comparing real-time shipping rates from multiple carriers (FedEx, UPS, USPS, Saia, ABF, and more). Key features include AI-powered packing, bulk label generation, order syncing, real-time parcel & freight quotes at checkout, and a centralized dashboard for fulfillment tracking and insights.",
@@ -113,7 +113,7 @@ const Projects = () => {
         demo: "https://apps.shopify.com/ad-scroll-to-top",
         github: null,
       },
-    },
+    }, */
   ];
 
   return (
