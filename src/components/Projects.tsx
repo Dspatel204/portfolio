@@ -11,7 +11,7 @@ const Projects = () => {
       tags: ["React", "Real-time", "Matching Algorithm", "Responsive"],
       links: {
         demo: "https://master--luvr-dating.netlify.app/",
-        github: "#",
+        github: "https://github.com/Dspatel204/luvr-dating",
       },
     },
     {
@@ -32,6 +32,16 @@ const Projects = () => {
       links: {
         demo: "https://kanvika.netlify.app/",
         github: "https://github.com/Dspatel204/website",
+      },
+    },
+    {
+      title: "Product Grid",
+      description:
+        "Built a high-performance product grid with virtualization and smart caching. Edit state keyed by unique product IDs (Record<number, EditState>) to avoid data pollution from Virtualization DOM recycling. Cache keys computed via JSON.stringify(params) capturing { query, sortBy, order, category, skip } for accurate cached hits. Uses a lean state-driven virtualizer tracking scrollTop, rendering only a visual window plus 2-row buffer with CSS absolute translateY transforms for perfect 60fps performance over large datasets.",
+      tags: ["React", "Virtualization", "Performance", "Data Grid"],
+      links: {
+        demo: "https://product-grid-table.vercel.app/",
+        github: "https://github.com/Dspatel204/product-grid-table",
       },
     },
   ];
