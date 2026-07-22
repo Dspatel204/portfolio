@@ -5,26 +5,6 @@ import { ExternalLink, Github } from "lucide-react";
 const Projects = () => {
   const projects = [
     {
-      title: "LuvR Dating App",
-      description:
-        "Modern dating application with real-time messaging, user matching algorithms, and responsive design for optimal user experience.",
-      tags: ["React", "Real-time", "Matching Algorithm", "Responsive"],
-      links: {
-        demo: "https://master--luvr-dating.netlify.app/",
-        github: "https://github.com/Dspatel204/luvr-dating",
-      },
-    },
-    {
-      title: "Empower Your Business",
-      description:
-        "CoreTech Innovations delivers cutting-edge technology services tailored for today's fast-paced world. Our platform offers seamless real-time communications, AI-driven analytics, and resilient cloud infrastructure—all wrapped in a responsive, user-centric design. Whether you're scaling operations or refining your digital presence, CoreTech equips you with intelligent, data-powered tools for growth, efficiency, and innovation.",
-      tags: ["React", "Real-time", "Matching Algorithm", "Responsive"],
-      links: {
-        demo: "https://dspatelapp.netlify.app/",
-        github: "https://github.com/Dspatel204/coretechweb",
-      },
-    },
-    {
       title: "kanvica jewellary",
       description:
         "Kanvika offers an elegant and curated collection of handcrafted jewelry—ranging from statement jhumkas and ornate neckpieces to oxidised silver bangles. The site mixes rich visuals with clear product specs (materials, dimensions, weight) and styling guidance, emphasizing quality craftsmanship and easy care. It’s tailored for shoppers seeking traditional, festive, or everyday ethnic pieces with a modern touch.",
