@@ -23,13 +23,13 @@ const Footer = () => {
               <Mail className="h-5 w-5 text-portfolio-text-subtle group-hover:text-accent transition-colors" />
             </a>
             <a
-              href="#"
+              href="https://www.linkedin.com/in/dishant-patel-22a05a287?utm_source=share_via&utm_content=profile&utm_medium=member_android"
               className="p-3 bg-portfolio-surface rounded-full hover:bg-accent/20 transition-colors duration-300 group"
             >
               <Linkedin className="h-5 w-5 text-portfolio-text-subtle group-hover:text-accent transition-colors" />
             </a>
             <a
-              href="#"
+              href="https://github.com/Dspatel204"
               className="p-3 bg-portfolio-surface rounded-full hover:bg-accent/20 transition-colors duration-300 group"
             >
               <Github className="h-5 w-5 text-portfolio-text-subtle group-hover:text-accent transition-colors" />
