@@ -1,6 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, Github } from "lucide-react";
+import { FaExternalLinkAlt as ExternalLink, FaGithub } from "react-icons/fa";
 
 const Projects = () => {
   const projects = [
@@ -22,6 +22,16 @@ const Projects = () => {
       links: {
         demo: "https://product-grid-table.vercel.app/",
         github: "https://github.com/Dspatel204/product-grid-table",
+      },
+    },
+    {
+      title: "CollegeHub - College Management System",
+      description:
+        "A full-stack college management system built with TanStack Start, React 19, Tailwind CSS v4, and shadcn/ui. Features include dashboard with stats and charts, student/faculty/course management, attendance tracking, fee management, exam management, library management, transport management, notices & messages, and reports & settings. Uses TanStack Router, TanStack Query v5, React Hook Form + Zod, Recharts, and Vite 7 + Nitro for Vercel deployment.",
+      tags: ["React", "TanStack Start", "Tailwind CSS", "shadcn/ui", "TanStack Query", "Vercel"],
+      links: {
+        demo: "https://college-management-beryl.vercel.app/",
+        github: "https://github.com/Dspatel204/college-management",
       },
     },
   ];
@@ -82,7 +92,7 @@ const Projects = () => {
                     size="sm"
                     onClick={() => window.open(project.links.github, "_blank")}
                   >
-                    <Github className="h-4 w-4" />
+                    <FaGithub className="h-4 w-4" />
                   </Button>
                 </div>
               </CardContent>

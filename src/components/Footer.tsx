@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail, Heart } from "lucide-react";
+import { FaEnvelope, FaLinkedin, FaGithub, FaHeart } from "react-icons/fa";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -11,35 +11,40 @@ const Footer = () => {
             <span className="text-accent">Dishant</span> Patel
           </h3>
           <p className="text-portfolio-text-subtle mb-6">
-            React JS Developer passionate about creating exceptional web experiences
+            React JS Developer passionate about creating exceptional web
+            experiences
           </p>
-          
+
           {/* Social Links */}
           <div className="flex justify-center gap-4 mb-8">
             <a
+              target="_blank"
               href="mailto:dishant.sureshbhai@gmail.com"
               className="p-3 bg-portfolio-surface rounded-full hover:bg-accent/20 transition-colors duration-300 group"
             >
-              <Mail className="h-5 w-5 text-portfolio-text-subtle group-hover:text-accent transition-colors" />
+              <FaEnvelope className="h-5 w-5 text-portfolio-text-subtle group-hover:text-accent transition-colors" />
             </a>
             <a
+              target="_blank"
               href="https://www.linkedin.com/in/dishant-patel-22a05a287?utm_source=share_via&utm_content=profile&utm_medium=member_android"
               className="p-3 bg-portfolio-surface rounded-full hover:bg-accent/20 transition-colors duration-300 group"
             >
-              <Linkedin className="h-5 w-5 text-portfolio-text-subtle group-hover:text-accent transition-colors" />
+              <FaLinkedin className="h-5 w-5 text-portfolio-text-subtle group-hover:text-accent transition-colors" />
             </a>
             <a
+              target="_blank"
               href="https://github.com/Dspatel204"
               className="p-3 bg-portfolio-surface rounded-full hover:bg-accent/20 transition-colors duration-300 group"
             >
-              <Github className="h-5 w-5 text-portfolio-text-subtle group-hover:text-accent transition-colors" />
+              <FaGithub className="h-5 w-5 text-portfolio-text-subtle group-hover:text-accent transition-colors" />
             </a>
           </div>
         </div>
 
         <div className="border-t border-border pt-8 text-center">
           <p className="text-portfolio-text-subtle flex items-center justify-center gap-2">
-            Made with <Heart className="h-4 w-4 text-accent fill-accent" /> by Dishant Patel © {currentYear}
+            Made with <FaHeart className="h-4 w-4 text-accent fill-accent" /> by
+            Dishant Patel © {currentYear}
           </p>
         </div>
       </div>
