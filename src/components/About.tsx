@@ -1,5 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Calendar, MapPin, Building } from "lucide-react";
+import { motion } from "framer-motion";
 
 const About = () => {
   const experiences = [
@@ -49,75 +50,92 @@ const About = () => {
   return (
     <section id="about" className="py-20 px-4">
       <div className="max-w-6xl mx-auto">
-        {/* Summary */}
-        <div className="text-center mb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="text-center mb-16"
+        >
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             About <span className="text-accent">Me</span>
           </h2>
           <p className="text-lg text-portfolio-text-subtle max-w-3xl mx-auto leading-relaxed">
-            I am a dedicated React JS developer with a strong background in creating dynamic web applications. 
-            I have hands-on experience working with diverse technologies like Shopify and Next JS, and I excel at 
-            crafting responsive designs tailored for various platforms. My goal is to leverage my skills in HTML, 
+            I am a dedicated React JS developer with a strong background in creating dynamic web applications.
+            I have hands-on experience working with diverse technologies like Shopify and Next JS, and I excel at
+            crafting responsive designs tailored for various platforms. My goal is to leverage my skills in HTML,
             CSS, JavaScript, and TypeScript to deliver exceptional user experiences.
           </p>
-        </div>
+        </motion.div>
 
-        {/* Experience */}
         <div>
           <h3 className="text-2xl font-bold mb-8 text-center">Work Experience</h3>
           <div className="space-y-8">
             {experiences.map((exp, index) => (
-              <Card key={index} className="portfolio-hover-glow transition-all duration-300">
-                <CardContent className="p-6">
-                  <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
-                    <div className="mb-4 md:mb-0">
-                      <h4 className="text-xl font-semibold text-accent">{exp.title}</h4>
-                      <div className="flex items-center gap-2 text-portfolio-text-subtle mt-2">
-                        <Building className="h-4 w-4" />
-                        <a
-                          href={exp.companyUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="font-medium hover:text-accent transition-colors underline underline-offset-2"
-                        >
-                          {exp.company}
-                        </a>
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.5, delay: index * 0.08, ease: "easeOut" }}
+              >
+                <Card className="portfolio-hover-glow transition-all duration-300">
+                  <CardContent className="p-6">
+                    <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
+                      <div className="mb-4 md:mb-0">
+                        <h4 className="text-xl font-semibold text-accent">{exp.title}</h4>
+                        <div className="flex items-center gap-2 text-portfolio-text-subtle mt-2">
+                          <Building className="h-4 w-4" />
+                          <a
+                            href={exp.companyUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="font-medium hover:text-accent transition-colors underline underline-offset-2"
+                          >
+                            {exp.company}
+                          </a>
+                        </div>
+                      </div>
+                      <div className="text-right">
+                        <div className="flex items-center gap-2 text-portfolio-text-subtle mb-2">
+                          <Calendar className="h-4 w-4" />
+                          <span>{exp.period}</span>
+                        </div>
+                        <div className="flex items-center gap-2 text-portfolio-text-subtle">
+                          <MapPin className="h-4 w-4" />
+                          <a
+                            href={exp.locationUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="hover:text-accent transition-colors underline underline-offset-2"
+                          >
+                            {exp.location}
+                          </a>
+                        </div>
                       </div>
                     </div>
-                    <div className="text-right">
-                      <div className="flex items-center gap-2 text-portfolio-text-subtle mb-2">
-                        <Calendar className="h-4 w-4" />
-                        <span>{exp.period}</span>
-                      </div>
-                      <div className="flex items-center gap-2 text-portfolio-text-subtle">
-                        <MapPin className="h-4 w-4" />
-                        <a
-                          href={exp.locationUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="hover:text-accent transition-colors underline underline-offset-2"
-                        >
-                          {exp.location}
-                        </a>
-                      </div>
+                    <div className="space-y-2">
+                      {exp.achievements.map((achievement, achIndex) => (
+                        <div key={achIndex} className="flex items-start gap-2">
+                          <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></div>
+                          <p className="text-portfolio-text-subtle">{achievement}</p>
+                        </div>
+                      ))}
                     </div>
-                  </div>
-                  <div className="space-y-2">
-                    {exp.achievements.map((achievement, achIndex) => (
-                      <div key={achIndex} className="flex items-start gap-2">
-                        <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></div>
-                        <p className="text-portfolio-text-subtle">{achievement}</p>
-                      </div>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
+                  </CardContent>
+                </Card>
+              </motion.div>
             ))}
           </div>
         </div>
 
-        {/* Education */}
-        <div className="mt-16">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.5, delay: 0.15, ease: "easeOut" }}
+          className="mt-16"
+        >
           <h3 className="text-2xl font-bold mb-8 text-center">Education</h3>
           <Card className="portfolio-hover-glow transition-all duration-300">
             <CardContent className="p-6">
@@ -131,7 +149,7 @@ const About = () => {
               </div>
             </CardContent>
           </Card>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

@@ -1,27 +1,50 @@
 import { Button } from "@/components/ui/button";
 import { Phone, Download, Mail, MapPin } from "lucide-react";
+import { motion } from "framer-motion";
 import profileImage from "@/assets/profile-hero.jpeg";
 
 const Hero = () => {
+  const contactItems = [
+    { icon: Phone, label: "7600022951", href: "tel:+917600022951" },
+    { icon: Mail, label: "dishant.sureshbhai@gmail.com", href: "mailto:dishant.sureshbhai@gmail.com" },
+    {
+      icon: MapPin,
+      label: "D503 Nilkanth Sky near dd sports circle variyav surat",
+      href: "https://maps.app.goo.gl/KkBfHSJJo449RmFS9",
+    },
+  ];
+
   return (
     <section className="min-h-screen flex items-center justify-center px-4 py-20">
       <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        {/* Profile Image */}
-        <div className="flex justify-center lg:justify-end">
+        <motion.div
+          initial={{ opacity: 0, x: -30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+          className="flex justify-center lg:justify-end"
+        >
           <div className="relative">
-            <div className="w-80 h-80 rounded-full overflow-hidden portfolio-glow">
+            <motion.div
+              whileHover={{ scale: 1.03, rotate: 1 }}
+              transition={{ type: "spring", stiffness: 180, damping: 16 }}
+              className="w-80 h-80 rounded-full overflow-hidden portfolio-glow"
+            >
               <img
                 src={profileImage}
                 alt="Dishant Patel"
                 className="w-full h-full object-contain"
               />
-            </div>
+            </motion.div>
             <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-accent/20 to-transparent"></div>
           </div>
-        </div>
+        </motion.div>
 
-        {/* Hero Content */}
-        <div className="text-center lg:text-left space-y-6">
+        <motion.div
+          initial={{ opacity: 0, x: 30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
+          className="text-center lg:text-left space-y-6"
+        >
           <div className="space-y-2">
             <h1 className="text-4xl md:text-6xl font-bold">
               <span className="text">Dishant Patel</span>
@@ -41,53 +64,53 @@ const Hero = () => {
             e-commerce merchants.
           </p>
 
-          {/* Contact Info */}
           <div className="space-y-3 text-portfolio-text-subtle">
-            <a
-              href="tel:+917600022951"
-              className="flex items-center gap-3 justify-center lg:justify-start hover:text-accent transition-colors"
-            >
-              <Phone className="h-5 w-5 text-accent" />
-              <span>7600022951</span>
-            </a>
-            <a
-              href="mailto:dishant.sureshbhai@gmail.com"
-              className="flex items-center gap-3 justify-center lg:justify-start hover:text-accent transition-colors"
-            >
-              <Mail className="h-5 w-5 text-accent" />
-              <span>dishant.sureshbhai@gmail.com</span>
-            </a>
-            <a
-              href="https://maps.app.goo.gl/KkBfHSJJo449RmFS9"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-3 justify-center lg:justify-start hover:text-accent transition-colors"
-            >
-              <MapPin className="h-5 w-5 text-accent" />
-              <span>D503 Nilkanth Sky near dd sports circle variyav surat</span>
-            </a>
+            {contactItems.map((item, index) => {
+              const Icon = item.icon;
+              return (
+                <motion.a
+                  key={item.label}
+                  href={item.href}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: 0.2 + index * 0.08 }}
+                  target={item.href.startsWith("http") ? "_blank" : undefined}
+                  rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                  className="flex items-center gap-3 justify-center lg:justify-start hover:text-accent transition-colors"
+                >
+                  <Icon className="h-5 w-5 text-accent" />
+                  <span>{item.label}</span>
+                </motion.a>
+              );
+            })}
           </div>
 
-          {/* Action Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-            <a href="tel:+917600022951">
+            <motion.a
+              href="tel:+917600022951"
+              whileHover={{ y: -2, scale: 1.01 }}
+              whileTap={{ scale: 0.97 }}
+            >
               <Button variant="hero" size="lg">
                 <Phone className="h-5 w-5" />
                 Hire Me
               </Button>
-            </a>
-            <a
+            </motion.a>
+            <motion.a
               href="/Dishant_Patel_React_Developer.pdf"
               download="Dishant_Patel_React_Developer.pdf"
               target="_blank"
               rel="noopener noreferrer"
+              whileHover={{ y: -2, scale: 1.01 }}
+              whileTap={{ scale: 0.97 }}
             >
               <Button variant="outline" size="lg">
+                <Download className="h-5 w-5" />
                 Download CV
               </Button>
-            </a>
+            </motion.a>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

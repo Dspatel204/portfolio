@@ -8,6 +8,7 @@ import {
   Download,
   Send,
 } from "lucide-react";
+import { motion } from "framer-motion";
 import { useToast } from "@/hooks/use-toast";
 import { useForm } from "react-hook-form";
 import {
