@@ -77,8 +77,8 @@ const Hero = () => {
               </Button>
             </a>
             <a
-              href="/Dishant_Patel_CV.pdf"
-              download="Dishant_Patel_CV.pdf"
+              href="/Dishant_Patel_React_Developer.pdf"
+              download="Dishant_Patel_React_Developer.pdf"
               target="_blank"
               rel="noopener noreferrer"
             >
