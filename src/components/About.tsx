@@ -6,35 +6,42 @@ const About = () => {
     {
       title: "React JS Developer",
       company: "AD Digitech",
-      period: "Jan 2024 - july 2026",
-      location: "Surat",
+      companyUrl: "https://addigitech.com/",
+      period: "Jan 2024 – Jul 2026",
+      location: "Surat, India",
+      locationUrl: "https://maps.app.goo.gl/ABnwUQQwB3beuvur5",
       achievements: [
-        "Developed a landing page builder with drag-and-drop functionality",
-        "Created carrier service provider app for Shopify orders using services like old domain fedex ups",
-        "Built drag and drop functionality with panel, mobile menu and scroll in Shopify theme extension",
+        "Built scalable Shopify applications using React, TypeScript, and Polaris.",
+        "Developed a drag-and-drop builder for creating mobile menus on landing pages compatible with all Shopify themes.",
+        "Implemented mega menus, dropdowns, icons, badges, labels, and a drag-and-drop editor.",
+        "Built customizable Thank You and Order Status post-purchase pages for Shopify themes.",
+        "Developed upsell and cross-sell features with product bundles, collections, and personalized recommendations.",
+        "Implemented coupon codes with countdown timers to drive urgency and repeat purchases.",
+        "Created a no-code product customizer supporting 7+ option types, including swatches, font pickers, file uploads, and text fields.",
+        "Added conditional logic, dynamic pricing, and add-ons synchronized across the cart and checkout.",
       ],
     },
     {
       title: "React JS Developer",
       company: "Identixweb Pvt Ltd",
-      period: "Oct 2022 - Aug 2023",
-      location: "surat",
+      companyUrl: "https://www.identixweb.com/",
+      period: "Oct 2022 – Aug 2023",
+      location: "Surat, India",
+      locationUrl: "https://maps.app.goo.gl/HHGcJZfdhrGEZmAt9",
       achievements: [
-        "Set shipping rates for different zones based on zip codes or postal codes",
-        "Set shipping charge based on multiple shipping rate rules",
-        "Set shipping rates for specific shipping zone based on cart total price with multicurrency support",
-        "Add unlimited shipping zones and zipcodes for adding shipping charges",
+        "Developed a shipping rate system by zip/postal code with multicurrency support.",
+        "Configured shipping rules based on cart total, product weight, and shipping zones for both price-based and weight-based rates.",
       ],
     },
     {
-      title: "Web Developer",
+      title: "React JS Developer",
       company: "Infinity Softech",
-      period: "Mar 2022 - Sep 2022",
-      location: "bhavnager",
+      companyUrl: "https://www.infinitysoftech.co/",
+      period: "Mar 2022 – Sep 2022",
+      location: "Bhavnager, India",
+      locationUrl: "https://maps.app.goo.gl/jw7TWWwPW2Dr1e6J8",
       achievements: [
-        "Created e-commerce functionalities including discount features",
-        "Developed task management functionalities with priority filters",
-        "Converted designs from Figma and Photoshop to responsive websites",
+        "Converted Figma, Illustrator, and Photoshop designs into responsive HTML, CSS, and JavaScript websites.",
       ],
     },
   ];
@@ -67,7 +74,14 @@ const About = () => {
                       <h4 className="text-xl font-semibold text-accent">{exp.title}</h4>
                       <div className="flex items-center gap-2 text-portfolio-text-subtle mt-2">
                         <Building className="h-4 w-4" />
-                        <span className="font-medium">{exp.company}</span>
+                        <a
+                          href={exp.companyUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="font-medium hover:text-accent transition-colors"
+                        >
+                          {exp.company}
+                        </a>
                       </div>
                     </div>
                     <div className="text-right">
@@ -77,7 +91,14 @@ const About = () => {
                       </div>
                       <div className="flex items-center gap-2 text-portfolio-text-subtle">
                         <MapPin className="h-4 w-4" />
-                        <span>{exp.location}</span>
+                        <a
+                          href={exp.locationUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="hover:text-accent transition-colors"
+                        >
+                          {exp.location}
+                        </a>
                       </div>
                     </div>
                   </div>

@@ -3,18 +3,6 @@ import { Phone, Download, Mail, MapPin } from "lucide-react";
 import profileImage from "@/assets/profile-hero.jpeg";
 
 const Hero = () => {
-  const handleCall = () => {
-    window.open("tel:+917600022951", "_self");
-  };
-
-  const handleDownloadCV = () => {
-    // Create a downloadable link for the CV
-    const link = document.createElement("a");
-    link.href = "#"; // You can replace this with actual CV file path
-    link.download = "Dishant_Patel_CV.pdf";
-    link.click();
-  };
-
   return (
     <section className="min-h-screen flex items-center justify-center px-4 py-20">
       <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -55,26 +43,39 @@ const Hero = () => {
 
           {/* Contact Info */}
           <div className="space-y-3 text-portfolio-text-subtle">
-            <div className="flex items-center gap-3 justify-center lg:justify-start">
+            <a
+              href="tel:+917600022951"
+              className="flex items-center gap-3 justify-center lg:justify-start hover:text-accent transition-colors"
+            >
               <Phone className="h-5 w-5 text-accent" />
               <span>7600022951</span>
-            </div>
-            <div className="flex items-center gap-3 justify-center lg:justify-start">
+            </a>
+            <a
+              href="mailto:dishant.sureshbhai@gmail.com"
+              className="flex items-center gap-3 justify-center lg:justify-start hover:text-accent transition-colors"
+            >
               <Mail className="h-5 w-5 text-accent" />
               <span>dishant.sureshbhai@gmail.com</span>
-            </div>
-            <div className="flex items-center gap-3 justify-center lg:justify-start">
+            </a>
+            <a
+              href="https://maps.app.goo.gl/KkBfHSJJo449RmFS9"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 justify-center lg:justify-start hover:text-accent transition-colors"
+            >
               <MapPin className="h-5 w-5 text-accent" />
               <span>D503 Nilkanth Sky near dd sports circle variyav surat</span>
-            </div>
+            </a>
           </div>
 
           {/* Action Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-            <Button variant="hero" size="lg" onClick={handleCall}>
-              <Phone className="h-5 w-5" />
-              Hire Me
-            </Button>
+            <a href="tel:+917600022951">
+              <Button variant="hero" size="lg">
+                <Phone className="h-5 w-5" />
+                Hire Me
+              </Button>
+            </a>
             <a href="/Dishant_Patel_CV.pdf" download>
               <Button variant="outline" size="lg">
                 Download CV
