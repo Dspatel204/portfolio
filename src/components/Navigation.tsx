@@ -1,10 +1,12 @@
 import { useState } from "react";
-import { Menu, X, Home, User, Briefcase, Mail } from "lucide-react";
+import { Menu, X, Home, User, Briefcase, Mail, Moon, Sun } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
+import { useTheme } from "@/context/ThemeContext";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { theme, toggleTheme } = useTheme();
 
   const navItems = [
     { name: "Home", icon: Home, href: "#home" },
@@ -39,7 +41,7 @@ const Navigation = () => {
           </motion.div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden md:flex space-x-8 items-center">
             {navItems.map((item, index) => (
               <motion.button
                 key={item.name}
@@ -61,23 +63,63 @@ const Navigation = () => {
                 />
               </motion.button>
             ))}
-          </div>
 
-          {/* Mobile Menu Button */}
-          <motion.div className="md:hidden" whileHover={{ scale: 1.1 }}>
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={() => setIsOpen(!isOpen)}
+            {/* Theme Toggle */}
+            <motion.button
+              onClick={toggleTheme}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
+              className="relative w-12 h-12 rounded-full border border-border bg-card/50 backdrop-blur-sm flex items-center justify-center hover:border-accent transition-colors duration-300"
             >
               <motion.div
-                animate={{ rotate: isOpen ? 90 : 0 }}
-                transition={{ duration: 0.3 }}
+                initial={false}
+                animate={{ rotate: theme === "dark" ? 0 : 180 }}
+                transition={{ duration: 0.5, type: "spring", stiffness: 200 }}
               >
-                {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+                {theme === "dark" ? (
+                  <Moon className="h-5 w-5 text-accent" />
+                ) : (
+                  <Sun className="h-5 w-5 text-accent" />
+                )}
               </motion.div>
-            </Button>
-          </motion.div>
+            </motion.button>
+          </div>
+
+          {/* Mobile Menu Button and Theme Toggle */}
+          <div className="md:hidden flex items-center gap-2">
+            <motion.button
+              onClick={toggleTheme}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
+              className="w-10 h-10 rounded-full border border-border bg-card/50 backdrop-blur-sm flex items-center justify-center hover:border-accent transition-colors duration-300"
+            >
+              <motion.div
+                initial={false}
+                animate={{ rotate: theme === "dark" ? 0 : 180 }}
+                transition={{ duration: 0.5, type: "spring", stiffness: 200 }}
+              >
+                {theme === "dark" ? (
+                  <Moon className="h-4 w-4 text-accent" />
+                ) : (
+                  <Sun className="h-4 w-4 text-accent" />
+                )}
+              </motion.div>
+            </motion.button>
+            <motion.div className="md:hidden" whileHover={{ scale: 1.1 }}>
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={() => setIsOpen(!isOpen)}
+              >
+                <motion.div
+                  animate={{ rotate: isOpen ? 90 : 0 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+                </motion.div>
+              </Button>
+            </motion.div>
+          </div>
         </div>
 
         {/* Mobile Menu */}

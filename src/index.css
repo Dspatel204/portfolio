@@ -62,6 +62,44 @@ All colors MUST be HSL.
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
+  /* Light mode colors */
+  :root:not(.dark) {
+    --background: 0 0% 98%;
+    --foreground: 220 14% 20%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 14% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 14% 20%;
+
+    --primary: 0 0% 100%;
+    --primary-foreground: 220 14% 20%;
+
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 220 14% 20%;
+
+    --muted: 220 14% 91%;
+    --muted-foreground: 220 12% 48%;
+
+    --accent: 4 86% 58%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 14% 88%;
+    --input: 220 13% 91%;
+    --ring: 4 86% 58%;
+
+    /* Custom portfolio colors for light mode */
+    --portfolio-gradient-start: 200 40% 92%;
+    --portfolio-gradient-end: 0 0% 98%;
+    --portfolio-accent-glow: 4 86% 58%;
+    --portfolio-text-subtle: 220 12% 45%;
+    --portfolio-surface: 0 0% 100%;
+  }
+
   .dark {
     --background: 220 26% 14%;
     --foreground: 0 0% 95%;
@@ -107,13 +145,14 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground transition-colors duration-500;
     background: linear-gradient(135deg, hsl(var(--portfolio-gradient-start)), hsl(var(--portfolio-gradient-end)));
     min-height: 100vh;
   }
 
   .portfolio-gradient-bg {
     background: linear-gradient(135deg, hsl(var(--portfolio-gradient-start)), hsl(var(--portfolio-gradient-end)));
+    transition: background 0.5s ease-in-out;
   }
 
   .portfolio-glow {
