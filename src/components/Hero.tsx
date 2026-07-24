@@ -76,7 +76,12 @@ const Hero = () => {
                 Hire Me
               </Button>
             </a>
-            <a href="/Dishant_Patel_CV.pdf" download>
+            <a
+              href="/Dishant_Patel_CV.pdf"
+              download="Dishant_Patel_CV.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Button variant="outline" size="lg">
                 Download CV
               </Button>

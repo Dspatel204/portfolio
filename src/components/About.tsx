@@ -38,7 +38,7 @@ const About = () => {
       company: "Infinity Softech",
       companyUrl: "https://www.infinitysoftech.co/",
       period: "Mar 2022 – Sep 2022",
-      location: "Bhavnager, India",
+      location: "Bhavnagar, India",
       locationUrl: "https://maps.app.goo.gl/jw7TWWwPW2Dr1e6J8",
       achievements: [
         "Converted Figma, Illustrator, and Photoshop designs into responsive HTML, CSS, and JavaScript websites.",
@@ -78,7 +78,7 @@ const About = () => {
                           href={exp.companyUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="font-medium hover:text-accent transition-colors"
+                          className="font-medium hover:text-accent transition-colors underline underline-offset-2"
                         >
                           {exp.company}
                         </a>
@@ -95,7 +95,7 @@ const About = () => {
                           href={exp.locationUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="hover:text-accent transition-colors"
+                          className="hover:text-accent transition-colors underline underline-offset-2"
                         >
                           {exp.location}
                         </a>

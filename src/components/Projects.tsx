@@ -45,7 +45,7 @@ const Projects = () => {
           </h2>
           <p className="text-lg text-portfolio-text-subtle max-w-2xl mx-auto">
             Various web development projects and portfolio showcased online.
-            Developed mobile menu bar apps, responsive landing pages, and
+            Developed responsive landing pages, and
             e-commerce sites to enhance user navigation and engagement.
           </p>
         </div>
@@ -101,7 +101,7 @@ const Projects = () => {
         </div>
 
         {/* Key Achievements */}
-        <div className="mt-20">
+        {/* <div className="mt-20">
           <h3 className="text-2xl font-bold mb-8 text-center">
             Key Achievements
           </h3>
@@ -118,7 +118,7 @@ const Projects = () => {
               </p>
             </CardContent>
           </Card>
-        </div>
+        </div> */}
       </div>
     </section>
   );
