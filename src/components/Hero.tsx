@@ -36,7 +36,7 @@ const Hero = () => {
         <div className="text-center lg:text-left space-y-6">
           <div className="space-y-2">
             <h1 className="text-4xl md:text-6xl font-bold">
-              Hi, I Am <span className="text-accent">Dishant Patel</span>
+              <span className="text">Dishant Patel</span>
             </h1>
             <h2 className="text-2xl md:text-3xl font-semibold text-accent">
               React JS Developer
@@ -44,10 +44,13 @@ const Hero = () => {
           </div>
 
           <p className="text-lg text-portfolio-text-subtle max-w-lg">
-            Experienced React JS Developer with a strong background in creating
-            dynamic web applications. I excel at crafting responsive designs
-            tailored for various platforms, delivering exceptional user
-            experiences.
+            React JS Developer with over 3 years of experience building
+            Shopify-native commerce applications, including drag-and-drop page
+            builders, upsell and cross-sell tools, automated SEO solutions, and
+            no-code product customizers. Skilled in React.js, Next.js,
+            JavaScript, and TypeScript, with a strong track record of delivering
+            pixel-perfect, mobile-responsive, conversion-focused features for
+            e-commerce merchants.
           </p>
 
           {/* Contact Info */}

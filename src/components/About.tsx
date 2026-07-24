@@ -6,8 +6,8 @@ const About = () => {
     {
       title: "React JS Developer",
       company: "AD Digitech",
-      period: "Jan 2024 - Present",
-      location: "Current Position",
+      period: "Jan 2024 - july 2026",
+      location: "Surat",
       achievements: [
         "Developed a landing page builder with drag-and-drop functionality",
         "Created carrier service provider app for Shopify orders using services like old domain fedex ups",
@@ -18,7 +18,7 @@ const About = () => {
       title: "React JS Developer",
       company: "Identixweb Pvt Ltd",
       period: "Oct 2022 - Aug 2023",
-      location: "Web development company",
+      location: "surat",
       achievements: [
         "Set shipping rates for different zones based on zip codes or postal codes",
         "Set shipping charge based on multiple shipping rate rules",
@@ -30,7 +30,7 @@ const About = () => {
       title: "Web Developer",
       company: "Infinity Softech",
       period: "Mar 2022 - Sep 2022",
-      location: "Technology services company",
+      location: "bhavnager",
       achievements: [
         "Created e-commerce functionalities including discount features",
         "Developed task management functionalities with priority filters",
