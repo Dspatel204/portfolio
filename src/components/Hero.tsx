@@ -1,9 +1,48 @@
 import { Button } from "@/components/ui/button";
 import { Phone, Download, Mail, MapPin } from "lucide-react";
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 import profileImage from "@/assets/profile-hero.jpeg";
 
 const Hero = () => {
+  const introPhrases = [
+    "Hi There,",
+    "I'm Dishant Patel",
+    "I am into Frontend Development",
+    "ReactJS Developer",
+  ];
+
+  const [displayText, setDisplayText] = useState("");
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  useEffect(() => {
+    const currentPhrase = introPhrases[currentIndex];
+
+    if (!isDeleting && displayText === currentPhrase) {
+      const pause = window.setTimeout(() => setIsDeleting(true), 1400);
+      return () => window.clearTimeout(pause);
+    }
+
+    if (isDeleting && displayText === "") {
+      const changePhrase = window.setTimeout(() => {
+        setIsDeleting(false);
+        setCurrentIndex((prev) => (prev + 1) % introPhrases.length);
+      }, 400);
+      return () => window.clearTimeout(changePhrase);
+    }
+
+    const timeout = window.setTimeout(() => {
+      if (isDeleting) {
+        setDisplayText(currentPhrase.slice(0, displayText.length - 1));
+      } else {
+        setDisplayText(currentPhrase.slice(0, displayText.length + 1));
+      }
+    }, isDeleting ? 55 : 95);
+
+    return () => window.clearTimeout(timeout);
+  }, [currentIndex, displayText, isDeleting, introPhrases]);
+
   const contactItems = [
     { icon: Phone, label: "7600022951", href: "tel:+917600022951" },
     { icon: Mail, label: "dishant.sureshbhai@gmail.com", href: "mailto:dishant.sureshbhai@gmail.com" },
@@ -15,7 +54,34 @@ const Hero = () => {
   ];
 
   return (
-    <section className="min-h-screen flex items-center justify-center px-4 py-20">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-4 py-20">
+      <div className="absolute inset-0 -z-10 overflow-hidden">
+        {[0, 1, 2, 3].map((item) => (
+          <motion.div
+            key={item}
+            className={`absolute rounded-full blur-3xl opacity-30 ${item % 2 === 0 ? "bg-cyan-500/40" : "bg-fuchsia-500/30"}`}
+            animate={{
+              x: [0, 80, -40, 0],
+              y: [0, -60, 50, 0],
+              scale: [1, 1.15, 0.9, 1],
+              rotate: [0, 10, -10, 0],
+            }}
+            transition={{
+              duration: 8 + item,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: item * 0.5,
+            }}
+            style={{
+              width: item % 2 === 0 ? 220 : 300,
+              height: item % 2 === 0 ? 220 : 300,
+              left: `${12 + item * 18}%`,
+              top: `${10 + item * 14}%`,
+            }}
+          />
+        ))}
+      </div>
+
       <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <motion.div
           initial={{ opacity: 0, x: -30 }}
@@ -45,13 +111,32 @@ const Hero = () => {
           transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
           className="text-center lg:text-left space-y-6"
         >
-          <div className="space-y-2">
-            <h1 className="text-4xl md:text-6xl font-bold">
+          <div className="space-y-3">
+            <motion.p
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="text-sm md:text-base font-medium uppercase tracking-[0.3em] text-accent"
+            >
+              Welcome
+            </motion.p>
+            <motion.h1
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="text-4xl md:text-6xl font-bold"
+            >
               <span className="text">Dishant Patel</span>
-            </h1>
-            <h2 className="text-2xl md:text-3xl font-semibold text-accent">
-              React JS Developer
-            </h2>
+            </motion.h1>
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="min-h-[2.4rem] rounded-full border border-accent/20 bg-white/5 px-4 py-2 text-lg md:text-xl font-semibold text-accent backdrop-blur-sm"
+            >
+              <span>{displayText}</span>
+              <span className="ml-1 animate-pulse">|</span>
+            </motion.div>
           </div>
 
           <p className="text-lg text-portfolio-text-subtle max-w-lg">

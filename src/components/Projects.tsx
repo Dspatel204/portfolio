@@ -67,8 +67,8 @@ const Projects = () => {
               transition={{ duration: 0.5, delay: index * 0.08, ease: "easeOut" }}
               whileHover={{ y: -6, scale: 1.01 }}
             >
-              <Card className="portfolio-hover-glow transition-all duration-300 h-full flex flex-col">
-                <CardContent className="p-6 flex-1 flex flex-col">
+              <Card className="group relative overflow-hidden portfolio-hover-glow transition-all duration-300 h-full flex flex-col">
+                <CardContent className="relative p-6 flex-1 flex flex-col">
                   <h3 className="text-xl font-semibold text-accent mb-3">
                     {project.title}
                   </h3>
@@ -105,6 +105,30 @@ const Projects = () => {
                       <FaGithub className="h-4 w-4" />
                     </Button>
                   </div>
+
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileHover={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.25, ease: "easeOut" }}
+                    className="absolute inset-0 z-10 flex items-center justify-center gap-3 bg-slate-950/75 backdrop-blur-sm opacity-0"
+                  >
+                    <Button
+                      variant="accent"
+                      size="sm"
+                      onClick={() => window.open(project.links.demo, "_blank")}
+                    >
+                      <ExternalLink className="h-4 w-4" />
+                      View
+                    </Button>
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      onClick={() => window.open(project.links.github, "_blank")}
+                    >
+                      <FaGithub className="h-4 w-4" />
+                      Code
+                    </Button>
+                  </motion.div>
                 </CardContent>
               </Card>
             </motion.div>
