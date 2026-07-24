@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Phone, Download, Mail, MapPin } from "lucide-react";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import LogoLoop from "./LogoLoop";
 import profileImage from "@/assets/profile-hero.jpeg";
 
 const Hero = () => {
@@ -54,7 +55,7 @@ const Hero = () => {
   ];
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-4 py-20">
+    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden px-4 py-20" id="home">
       <div className="absolute inset-0 -z-10 overflow-hidden">
         {[0, 1, 2, 3].map((item) => (
           <motion.div
@@ -197,6 +198,17 @@ const Hero = () => {
           </div>
         </motion.div>
       </div>
+
+      {/* Logo Loop Section */}
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.7, delay: 0.3 }}
+        className="w-full mt-20 mb-12"
+      >
+        <LogoLoop />
+      </motion.div>
     </section>
   );
 };
